@@ -38,7 +38,7 @@ pip install -r requirements.txt
 ##### Windows:
 ```
 virtualenv venv
-/path/to/env/Scripts/activate
+\path\to\env\Scripts\activate
 pip install -r requirements.txt
 ```
 
