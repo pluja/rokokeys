@@ -1,13 +1,13 @@
 # Rokokeys
-Rokokeys is a reasonably safe method of saving your wallet's mnemonic seeds. This method is much better than writing down your raw seed on a phone or a not-so-secured paper.
+Rokokeys is a reasonably safe method of saving your wallet's mnemonic phrase. This method is much better than writing down your raw seed on a phone or a not-so-secured paper.
 
 > Note that this is a first **functional** version. Much more improvements will come with the methodology and security.
 
 ## How it works:
 
-It's simple. Rokokeys will ask you for a **secret**. This secret is a *salt* that will be added to each of your mnemonic seed words. Each resulting word (word+salt) will be hashed using an algorithm of your choice. 
+It's simple. Rokokeys will ask you for a **secret**. This secret is a *salt* that will be added to each of your mnemonic phrase words. Each resulting word (word+salt) will be hashed using an algorithm of your choice. 
 
-Then Rokokeys will generate a QR code with the `rokokeys recovery` along with a `backup.csv`. You can now write down the `backup.csv` anywhere you want or save and distribute your QR code. It is safe as without the **secret** no one will be able to decrypt your mnemonic seed.
+Then Rokokeys will generate a QR code with the `rokokeys recovery` along with a `backup.csv`. You can now write down the `backup.csv` anywhere you want or save and distribute your QR code. It is safe as without the **secret** no one will be able to decrypt your mnemonic phrase.
 
 ## IMPORTANT: Before using
 
@@ -25,7 +25,7 @@ To reduce the threat you should:
 5. Again, [**use Tails on a USB drive**.](https://tails.boum.org/)
 6. Don't use a shared computer.
 7. Once the backup is finished, delete all evidences.
-8. You should still keep a copy of your raw mnemonic seed somewhere.
+8. You should still keep a copy of your raw mnemonic phrase somewhere.
 9. SAVE THIS CODE. Just in case you need to recover your keys and you can't access this repository.
 10. Make a test before the definitive copy. Just to learn the flow. Use 2 or 5 words.
 10. Be safe. Doubt. Read the code.
