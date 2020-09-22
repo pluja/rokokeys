@@ -9,6 +9,27 @@ It's simple. Rokokeys will ask you for a **secret**. This secret is a *salt* tha
 
 Then Rokokeys will generate a QR code with the `rokokeys recovery` along with a `backup.csv`. You can now write down the `backup.csv` anywhere you want or save and distribute your QR code. It is safe as without the **secret** no one will be able to decrypt your mnemonic seed.
 
+## IMPORTANT: Before using
+
+Read this **very** important points before using Rokokeys to backup your seeds:
+1. Anything displayed on a digital screen can be compromised in one way or another. 
+2. Any device connected to the internet can be compromised.
+3. Any device that *has been* connected to the internet can be compromised.
+4. Any computer can have a *keylogger* on it.
+
+To reduce the threat you should:
+1. Know your threat model.
+2. Use a newly and fresh installed OS. It is highly recommended to use **Tails**.
+3. Clone the repository, copy it to a USB drive and proceed without internet connection.
+4. READ THE CODE. Even if you don't know anything about Python, read it and try to find if there's anything strange. Rokokeys does NOT need internet connection and it does NOT save your raw keys anywhere on the computer.
+5. Again, **use Tails on a USB drive**.
+6. Don't use a shared computer.
+7. Once the backup is finished, delete all evidences.
+8. You should still keep a copy of your raw mnemonic seed somewhere.
+9. SAVE THIS CODE. Just in case you need to recover your keys and you can't access this repository.
+10. Make a test before the definitive copy. Just to learn the flow. Use 2 or 5 words.
+10. Be safe. Doubt. Read the code.
+
 ## Install and use
 
 Getting Rokokeys to work is very easy. First, you will need to clone this repository with:
