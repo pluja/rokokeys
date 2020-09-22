@@ -6,7 +6,7 @@ import time
 import sys
 import csv
 
-def gethash(s, encoding='utf-8'):
+def gethash(s, encoding='utf-8', algo=""):
     if algo == "3" or algo == "3 " or algo == " 3" or algo == " 3 ":
         return sha256(s.encode(encoding)).hexdigest()
     if algo == "2" or algo == "2 " or algo == " 2" or algo == " 2 ":
@@ -16,13 +16,13 @@ def gethash(s, encoding='utf-8'):
 SIGNATURE = """
 
 
-  ______  _____  _     _  _____  _     _ _______ __   __
- |_____/ |     | |____/  |     | |____/  |______   \_/  
- |    \_ |_____| |    \_ |_____| |    \_ |______    |   
+  ______  _____  _     _  _____  _     _ _______ __   __ _______
+ |_____/ |     | |____/  |     | |____/  |______   \_/   |______
+ |    \_ |_____| |    \_ |_____| |    \_ |______    |    ______|
                          RECOVER
-                                              by pluja.
+                                                        by pluja.
  
- Donate ₿:                                                 
+ Donate ₿: bc1q5y3g907ju0pt40me7dr9fy5uhfhfgfv9k3kh3z                                                
 """
 print(SIGNATURE)
 print("❗ ATTENTION ❗ ")
@@ -33,18 +33,18 @@ sk = "a"
 tmp_sk = "b"
 while sk != tmp_sk:
     print("\n\n➜ Type your secret...")
-    sk = getpass.getpass()
+    sk = gethash(getpass.getpass(), "utf-8", "3")
 
     print("\n➜ Repeat your secret...")
-    tmp_sk = getpass.getpass()
+    tmp_sk = gethash(getpass.getpass(), "utf-8", "3")
 
     if sk != tmp_sk:
         print("\n❌ ERROR: Secrets don't match!")
 
 print("\n\nℹ Please, now choose the hashing algorithm you chose to build your backup")
-print("[1]- SHA1 ⚏ Lightweight and moderatelly secure")
-print("2- SHA224 ⚎ Very strong but very big QR")
-print("3- SHA256 ⚌ Strongest but largest QR")
+print("[1]- SHA1 ⚏")
+print("2- SHA224 ⚎")
+print("3- SHA256 ⚌")
 algo = input("\n➜ Hashing algorithm [Default SHA1]: ")
 
 print("\nℹ Now we will take the file 'backup.txt' and give you your keys. Please, make sure your backup.txt file is in place.")
@@ -59,7 +59,7 @@ for hsh in hashlist:
         found = False
         bipnum = 1
         for line in f:
-            c_hsh = gethash(line.rstrip()+sk, encoding='utf-8')
+            c_hsh = gethash(line.rstrip()+sk, encoding='utf-8', algo=algo)
             if (c_hsh == hsh) and not found:
                 print("{n}. {bn} | {w}".format(n=wc, w=line.rstrip(), bn=bipnum))
                 found = True

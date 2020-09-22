@@ -8,16 +8,16 @@ import sys
 SIGNATURE = """
 
 
-  ______  _____  _     _  _____  _     _ _______ __   __
- |_____/ |     | |____/  |     | |____/  |______   \_/  
- |    \_ |_____| |    \_ |_____| |    \_ |______    |   
-                        GENERATOR
-                                              by pluja.
+  ______  _____  _     _  _____  _     _ _______ __   __ _______
+ |_____/ |     | |____/  |     | |____/  |______   \_/   |______
+ |    \_ |_____| |    \_ |_____| |    \_ |______    |    ______|
+                         GENERATOR
+                                                         by pluja.
  
- Donate ₿:                                                 
+ Donate ₿: bc1q5y3g907ju0pt40me7dr9fy5uhfhfgfv9k3kh3z                                                
 """
 
-def gethash(s, encoding='utf-8'):
+def gethash(s, encoding='utf-8', algo=""):
     if algo == "3" or algo == "3 " or algo == " 3" or algo == " 3 ":
         return sha256(s.encode(encoding)).hexdigest()
     if algo == "2" or algo == "2 " or algo == " 2" or algo == " 2 ":
@@ -40,10 +40,10 @@ sk = "a"
 tmp_sk = "b"
 while sk != tmp_sk:
     print("\n\n➜ Type your secret...")
-    sk = getpass.getpass()
+    sk = gethash(getpass.getpass(), "utf-8", "3")
 
     print("\n➜ Repeat your secret...")
-    tmp_sk = getpass.getpass()
+    tmp_sk = gethash(getpass.getpass(), "utf-8", "3")
 
     if sk != tmp_sk:
         print("\n❌ ERROR: Secrets don't match!")
@@ -69,7 +69,7 @@ print("ℹ Please type your words one by one in order...\n")
 hashlist = []
 tn = 1
 while tn < n+1:
-    hwd = gethash(input("➜ Input the {} word: ".format(tn))+sk, encoding='utf-8')
+    hwd = gethash(input("➜ Input the {} word: ".format(tn))+sk, encoding='utf-8', algo=algo)
     hashlist.append(hwd)
     tn = tn+1
 
@@ -77,7 +77,7 @@ print("\nℹ {} total words.\n".format(len(hashlist)))
 tn = 1
 correct = True
 while tn < n+1:
-    th = gethash(input("➜ Verify the {} word: ".format(tn))+sk, encoding='utf-8')
+    th = gethash(input("➜ Verify the {} word: ".format(tn))+sk, encoding='utf-8', algo=algo)
     correct = (th == hashlist[tn-1])
     if not correct:
         print("\n❌ ERROR: Word {} didn't match!".format(tn))
