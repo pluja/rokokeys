@@ -1,7 +1,7 @@
 # Rokokeys
-Rokokeys is a reasonably safe method of saving your wallet's mnemonic seeds. This method is much better than writing down your seed on a phone or a not-so-securelly-saved paper.
+Rokokeys is a reasonably safe method of saving your wallet's mnemonic seeds. This method is much better than writing down your raw seed on a phone or a not-so-secured paper.
 
-> Note that this is a **functional** beta version. Much more improvements will come with the methodology and security.
+> Note that this is a first **functional** version. Much more improvements will come with the methodology and security.
 
 ## How it works:
 
